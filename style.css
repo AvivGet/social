@@ -566,12 +566,12 @@ img:last-child:nth-child(5) {
 /* Mobile Styles */
 @media (max-width: 768px) {
 	body, .content-container, .gallery, .about-container, .highlighted, .prodRel, .infog {
-        font-family: serif;
+        font-family: Serif;
     }
 
     /* You can also specify fonts for specific elements if needed */
     .navbar a, .name, .role {
-        font-family: serif;
+        font-family: Serif;
     }
 	
 	.footer {
@@ -580,7 +580,6 @@ img:last-child:nth-child(5) {
         left: 0;
         width: 100%;
         background-color: #fde6e0;
-        height: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -593,7 +592,6 @@ img:last-child:nth-child(5) {
     body:after {
         content: '';
         display: block;
-        height: 150px; /* Add extra space at the bottom to simulate scroll */
     }
 
     /* Trigger the footer to show when the user scrolls near the bottom */
@@ -607,7 +605,7 @@ img:last-child:nth-child(5) {
         display: flex;
         justify-content: right;
         position: relative;
-	padding-bottom: 10px;
+		padding-bottom: 50px;
     }
 	
 	.portfolio .footer {
@@ -860,11 +858,10 @@ img:last-child:nth-child(5) {
 	
 	.footer {
 		position: absolute; /* Stay at the bottom of the page, not fixed */
-		bottom: 0;
+		bottom: 0px;
 		left: 0;
 		width: 100%;
 		background-color: #fde6e0;
-		height: 60px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
