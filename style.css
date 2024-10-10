@@ -1,0 +1,881 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Cursive;
+    overflow-x: hidden;
+    background-image: url('images/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #4b1d24;
+    position: relative;
+    z-index: 1; /* Ensure it's on top of the background */
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    padding-bottom: 50px;
+    position: relative; /* Keep content relative */
+}
+
+#main-content.fade-in {
+    opacity: 1;
+}
+
+#main-content.fade-out {
+    opacity: 0; 
+    padding-bottom: 100px;
+}
+
+.content-container {
+    width: 90%;
+    max-width: 1650px;
+    margin: 0 auto;
+    padding-top: 140px;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.main-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.content-container {
+    width: 90%; 
+    max-width: 1650px;
+    margin: 0 auto;
+    padding-top: 140px;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.main-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.left-section,
+.right-section {
+    flex: 1; 
+    padding: 20px;
+}
+
+.left-section {
+    text-align: left;
+}
+
+.right-section {
+    text-align: left;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.navbar li {
+    margin: 10px 5px;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    z-index: 2; /* Ensure it's clickable above the maingal image */
+    position: relative;
+}
+
+.navbar a {
+    color: #4b1d24;
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 8px 14px;
+    padding-right: 50px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    z-index: 2;
+}
+
+.navbar a:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.image-wrapper {
+    width: 500px; 
+    height: 500px;
+    position: relative;
+    margin-bottom: 20px;
+    transition: transform .5s ease-out, offset-path .5s cubic-bezier(.77,-1.17,.75,.84), z-index .3s;
+    z-index: 0;
+}
+
+.image-wrapper:hover {
+    transform: scale(1.05);
+    z-index: 999;
+}
+
+.image-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 505px;
+    height: 505px;
+    background-color: #ffffcc;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.image-cropper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.image-cropper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-container {
+    text-align: left;
+    margin: 20px 0;
+    width: 80%;
+    max-width: 600px;
+}
+
+.description {
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+    margin: 20px 0;
+    padding-bottom: 45px;
+}
+
+.name {
+    font-size: 2.5rem;
+    font-family: serif;
+    padding-bottom: 10px;
+}
+
+.role {
+    font-size: 1.2rem;
+}
+
+.skills {
+    padding-top: 10px;
+}
+
+.footer {
+    position: relative; /* Make sure the footer is positioned relative */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding: 10px 0;
+    background-color: #fde6e0;
+    bottom: 0;
+    z-index: 1;
+}
+
+
+.footer-icons {
+    position: absolute; /* Position relative to the footer */
+    bottom: 10px; /* Stick to the bottom of the page */
+    right: 10px; /* Stick to the right side */
+    display: flex;
+    align-items: center;
+    z-index: 2; /* Ensure visibility above other content */
+}
+
+.footer-linkedin-link img {
+    transition: filter 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.footer-email-link img {
+    transition: filter 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.footer-email-link img:hover {
+    filter: brightness(0) invert(1);
+    transform: scale(1.1);
+}
+
+.footer-linkedin-link img:hover {
+    filter: brightness(0) invert(1);
+    transform: scale(1.1);
+}
+
+.emailIcon {
+    width: 50px; 
+    height: 50px; 
+    padding-bottom: 10px;
+    padding-right: 20px;
+}
+
+.linIcon {
+    width: 45px;
+    height: 45px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+}
+
+.download-cv {
+    font-size: 1.2rem;
+    color: #4b1d24;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: color 0.3s ease, font-size 0.3s ease, line-height 0.3s ease;
+    line-height: 1.5rem;
+}
+
+.download-cv:hover {
+    color: #798358;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed; /* Make the flex container fixed */
+    top: 100px;
+    right: 20px;
+}
+
+.quote,
+.godin {
+    margin-bottom: 20px;
+}
+
+.quote img {
+    width: 800px;
+    height: auto;
+    margin-right: 30px;
+    padding-top: 30px;
+}
+
+.godin img {
+    width: 250px;
+    height: auto;
+    animation: slideInFromRight 2s ease-out;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1; 
+    }
+}
+
+.godin img {
+    width: 65%; 
+    height: auto; 
+    animation: slideInFromRight 2s ease-out; 
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateY(100%); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1; 
+    }
+}
+
+.bookReading {
+    position: relative;
+    width: 100%; /* Make sure it's responsive */
+    max-width: 250px; /* Limit the maximum width */
+    margin: 20px auto; /* Add margin to keep it spaced from the form */
+    margin-bottom: 0px;
+    display: block; /* Ensure it's treated as a block-level element */
+    padding-right: 350px; /* Add padding to the right */
+}
+
+.bookReading img {
+    width: 200%; /* Ensure it fits the container */
+    height: auto; /* Maintain the aspect ratio */
+    animation: slideInFromRight 2s ease-out;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 1px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #1a75ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #4da6ff;
+}
+
+.contact-form {
+    position: relative; /* Keep form in document flow */
+    z-index: 1; /* Ensure it's above the quote */
+}
+
+.quote {
+    position: relative;
+    margin-top: 30px; /* Add enough margin to ensure no overlap with the form */
+    z-index: 0; /* Ensure the quote stays behind the form */
+    clear: both; /* Prevent floating or overlap */
+}
+
+.quote img {
+    width: 60%; /* Adjust width for mobile */
+    margin: 0 auto; /* Center the quote image */
+    display: block; /* Make the image a block element */
+    padding-top: 20px; /* Ensure there is space between the form and quote */
+}
+
+.phone-link {
+    color: #1a75ff;
+    transition: color 0.3s ease;
+}
+
+.phone-link:hover {
+    color: #4da6ff;
+}
+
+.content-container {
+    width: 90%; 
+    max-width: 1650px;
+    margin: 0 auto;
+    padding-top: 140px;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.contact-page .contact-page-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 170px;
+    width: 100%;
+    height: 80%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.contact-page .contact-container {
+    padding-left: 10px;
+    padding-top: 80px;
+}
+
+.about-container {
+    display: flex;
+    position: relative;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.about {
+    flex-grow: 1;
+    padding-top: 200px;
+    padding-left: 50px;
+    max-width: 600px; 
+}
+
+.maingal {
+    position: absolute;
+    right: -1000px;
+    top: -100px;
+    width: 170%;
+    max-width: none;
+    height: auto;
+    z-index: 0; /* Put it behind navbar and gallery */
+    object-fit: contain;
+}
+
+.highlighted {
+    padding-left: 100px;
+    text-align: left;
+    padding-top: 150px;
+}
+
+.prodRel {
+    padding-left: 100px;
+    text-align: left;
+}
+
+.infog {
+    padding-left: 100px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    z-index: 2; /* Ensure it stays clickable above maingal */
+    position: relative; /* Ensure it is positioned correctly */
+}
+
+/* Increase gallery images size and ensure hover works */
+.gallery img {
+    margin: 10px;
+    width: 300px; /* Increased image size */
+    height: auto;
+    box-shadow: 1px 1px 3px #0008;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Increased scaling on hover */
+    box-shadow: 3px 4px 10px #0006;
+    z-index: 999;
+}
+
+/* Adjustments for text sections */
+.highlighted, 
+.prodRel, 
+.infog, 
+.fincontainer {
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: left;
+}
+
+/* Footer Icons */
+.footer-icons {
+    display: flex;
+    justify-content: right;
+    position: fixed; /* Keep icons fixed */
+    margin-top: -50px; /* Reduce the space above footer icons */
+}
+
+.fin {
+    font-size: 20px;
+}
+
+.fincontainer {
+    text-align: left;
+    margin-left: 10px; 
+    margin-top: 20px; 
+    padding-bottom: 20px; 
+}
+
+.fincontainer a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.fincontainer a:hover {
+    text-decoration: underline;
+    color: #4da6ff;    
+}
+
+/* 3 images */
+img:nth-last-child(5):first-child {
+    offset-distance: 10%;
+}
+
+img:nth-last-child(4):nth-child(2) {
+    offset-distance: 30%; 
+}
+
+img:nth-last-child(3):nth-child(3) {
+    offset-distance: 50%;
+}
+
+img:nth-last-child(2):nth-child(4) {
+    offset-distance: 70%;
+}
+
+img:last-child:nth-child(5) {
+    offset-distance: 90%;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+	body, .content-container, .gallery, .about-container, .highlighted, .prodRel, .infog {
+        font-family: Cursive;
+    }
+
+    /* You can also specify fonts for specific elements if needed */
+    .navbar a, .name, .role {
+        font-family: Cursive;
+    }
+	
+	.footer {
+        position: relative; /* Not fixed, so it appears after the content */
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fde6e0;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden; /* Hidden by default */
+        opacity: 0; /* Hidden by default */
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    /* Ensure footer is visible when the user reaches a certain point */
+    body:after {
+        content: '';
+        display: block;
+        height: 150px; /* Add extra space at the bottom to simulate scroll */
+    }
+
+    /* Trigger the footer to show when the user scrolls near the bottom */
+    body:focus-within .footer {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Ensure footer icons are correctly positioned */
+    .footer-icons {
+        display: flex;
+        justify-content: right;
+        position: relative;
+    }
+	
+	.portfolio .footer {
+		margin-bottom: 0; /* Remove any additional margin */
+		padding-bottom: 0; /* Remove any additional padding */
+		position: absolute; /* Stick the footer at the bottom */
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 60px;
+		background-color: #fde6e0;
+		display: flex;
+		justify-content: right;
+		align-items: right;
+	}
+
+	/* Adjust footer icons for portfolio page */
+	.portfolio .footer-icons {
+		margin-bottom: 0; /* Remove any additional margin */
+		padding-bottom: 0; /* Remove any additional padding */
+		position: relative;
+		display: flex;
+		justify-content: right;
+		align-items: right;
+	}
+	
+    .content-container, .gallery, .about-container, .highlighted, .prodRel, .infog {
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center; /* Center text for mobile */
+	 body, .content-container, .gallery, .about-container, .highlighted, .prodRel, .infog {
+        font-family: 'Cursive', 'Arial', sans-serif; /* Use the same font stack */
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center; /* Center text for mobile */
+    }
+    
+    /* You can also specify fonts for specific elements if needed */
+    .navbar a, .name, .role {
+        font-family: 'Cursive', 'Arial', sans-serif; /* Ensure navbar, name, and role use the same font */
+    }
+    }
+
+    .main-layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Ensure text in main layout is centered */
+    }
+
+    .left-section, .right-section {
+        padding: 10px;
+        margin-top: -140px;
+        margin-bottom: 10px;
+        width: 100%; /* Full-width for sections on mobile */
+        text-align: center; /* Center-align text in sections */
+    }
+
+    .right-section {
+        padding-top: 130px;
+    }
+
+    /* Adjust the description section */
+    .description {
+        width: 90%; /* Reduce width on mobile for better fitting */
+        max-width: 600px;
+        margin: 0 auto; /* Center the description container */
+        text-align: center; /* Center-align text */
+        padding: 20px 10px; /* Add some padding for spacing */
+    }
+
+    /* Navbar remains in a row */
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        list-style: none;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+        padding: 10px;
+        text-align: center;
+        margin: 0 10px; /* Space out navbar items */
+    }
+
+    /* Adjust the skills section */
+    .skills-title {
+        text-align: center; /* Center the title */
+        margin-top: -50px;
+    }
+
+    .skills ul {
+        text-align: left; /* Left-align the bullet points */
+        padding-left: 60px;
+        max-width: 250px;
+    }
+
+    .image-wrapper {
+        width: 250px;  /* Set fixed width for the circular wrapper */
+        height: 250px; /* Set fixed height for the circular wrapper */
+        border-radius: 50%; /* Ensures the wrapper is circular */
+        overflow: hidden; /* Ensures any overflow is hidden to maintain the circular shape */
+        margin-top: 10px; /* Adjust the margin as needed */
+        position: relative; /* Allows positioning inside the wrapper */
+    }
+
+    /* Adjust the image inside the circular crop */
+    .image-cropper img {
+        width: 100%;  /* Fill the width of the wrapper */
+        height: auto; /* Maintain aspect ratio */
+        position: absolute; /* Allows manual positioning */
+        top: 50%; /* Start positioning from the center */
+        left: 50%; /* Start positioning from the center */
+        transform: translate(-50%, -50%) scale(0.5); /* Scale down to fit better */
+    }
+
+    .fincontainer {
+        margin-left: 0;
+        text-align: center; /* Ensure footer text is centered */
+    }
+
+    .contact-page .contact-page-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        padding-right: 30px;
+    }
+
+    /* Main content container for the page */
+    .contact-page .content-container {
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 10px;
+    }
+
+    /* Contact form styling */
+    .contact-page .contact-form {
+        width: 100%;
+        margin: 0 auto;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    /* Title and description of the contact page */
+    .contact-page h1, .contact-page p {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Hide the quote on mobile */
+    .quote {
+        display: none;
+    }
+
+    /* Hide the Godin image on mobile */
+    .godin {
+        display: none;
+    }
+
+    /* Book Image */
+    .bookReading {
+        display: none;
+    }
+
+    .bookReading img {
+        display: none;
+    }
+
+    .portfolio .about {
+        text-align: center;
+        justify-content: center;
+        margin-bottom: -100px;
+        margin-top: -170px;
+        margin-right: 60px;
+        padding-right: 0px;
+    }
+
+    .aboutTitle {
+        text-align: center;
+        justify-content: center;
+        padding-left: 20px;
+    }
+
+    /* Add white background box to the description */
+    .portfolio .desc {
+        width: 110%; /* Make the box wider than its container */
+        max-width: 600px; /* Limit the maximum width */
+        margin: 0 auto; /* Center the description block */
+        transform: translateX(-5%); /* Offset the extra width to keep it centered */
+        text-align: center; /* Align the text inside the box to the left */
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 10px; /* Add padding inside the box */
+        background-color: white; /* White background box */
+        border-radius: 10px; /* Rounded corners */
+        opacity: 95%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */	
+    }
+
+    /* Center-align other text sections */
+    .portfolio .gallery-wrapper, 
+    .portfolio .fincontainer {
+        text-align: center;
+    }
+
+    .portfolio .infog, 
+    .portfolio .prodRel, 
+    .portfolio .fin {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    /* Make gallery images appear bigger and in one column on mobile */
+    .portfolio .gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    /* Ensure images are larger and centered on mobile */
+    .portfolio .gallery img {
+        margin: 10px 0;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        display: block;
+    }
+
+    /* Main gallery image */
+    .portfolio {
+        width: 100%;
+        max-width: 700px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+	
+	.maingal {
+		display: none;
+	}
+	
+	.footer {
+		position: absolute; /* Stay at the bottom of the page, not fixed */
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background-color: #fde6e0;
+		height: 60px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		visibility: hidden; /* Hidden initially */
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+	}
+
+	body.scrolled-to-bottom .footer {
+		visibility: visible;
+		opacity: 1; /* Fade in footer when scrolled to the bottom */
+	}
+
+
+}

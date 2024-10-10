@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Contact Me | Aviv Getraidman</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="functions.js" type="text/javascript"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body class="contact-page">
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">My Portfolio</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Wrap the main content in a div with id="main-content" -->
+    <div id="main-content">
+        <div class="contact-page-wrapper">
+            <div class="contact-container">
+                <h1 id="contactHeader">Contact Me</h1>
+                <p id="getInTouch">Feel free to get in touch via email:</p>
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    <input type="hidden" name="access_key" value="801c9b2f-38d9-4f6d-b6e2-71619900340d">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                    <p>Or if you would like to chat: <b><a href="tel:+972523977873" class="phone-link">+972 (523) 977-873</a></b></p>
+                </form>
+            </div>
+        </div>
+        <div class="flex-container">
+			<div class="quote">	
+				<img src="images/quote.png" alt="Quote">
+			</div>
+			<div class="godin">
+				<img src="images/godin.png" alt="Seth Godin">
+			</div>
+			<div class="bookReading">
+				<img src="images/bookReading.png" alt="Book Reading">
+			</div>
+
+		</div>
+    </div>
+
+    <footer>
+        <div class="footer-icons">
+            <a href="https://www.linkedin.com/in/aviv-getraidman-a9a64b178/" target="_blank" class="footer-linkedin-link">
+                <img src="images/linkedin-logo.png" alt="LinkedIn" class="linIcon">
+            </a>
+            <a href="mailto:avivgetraimdan@gmail.com" class="footer-email-link">
+                <img src="images/email.png" alt="Email" class="emailIcon">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
