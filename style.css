@@ -566,12 +566,12 @@ img:last-child:nth-child(5) {
 /* Mobile Styles */
 @media (max-width: 768px) {
 	body, .content-container, .gallery, .about-container, .highlighted, .prodRel, .infog {
-        font-family: Cursive;
+        font-family: serif;
     }
 
     /* You can also specify fonts for specific elements if needed */
     .navbar a, .name, .role {
-        font-family: Cursive;
+        font-family: serif;
     }
 	
 	.footer {
