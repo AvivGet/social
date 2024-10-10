@@ -605,7 +605,6 @@ img:last-child:nth-child(5) {
         display: flex;
         justify-content: right;
         position: relative;
-		padding-bottom: 50px;
     }
 	
 	.portfolio .footer {
@@ -729,38 +728,72 @@ img:last-child:nth-child(5) {
     }
 
     .contact-page .contact-page-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 20px;
-        width: 100%;
-        box-sizing: border-box;
-        padding-right: 30px;
-    }
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start; /* Align content closer to the top */
+		text-align: center;
+		padding: 10px 20px; /* Reduced padding to fix the spacing issue */
+		width: 100%;
+		box-sizing: border-box;
+		margin-bottom: 0; /* Ensure no extra margin at the bottom */
+	}
 
-    /* Main content container for the page */
-    .contact-page .content-container {
-        width: 100%;
-        max-width: 600px;
-        margin-bottom: 10px;
-    }
+	.contact-page .contact-page-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start; /* Align content closer to the top */
+		text-align: center;
+		padding: 10px 20px; /* Reduced padding to fix spacing issue */
+		width: 100%;
+		box-sizing: border-box;
+		margin-bottom: 0; /* Remove extra margin at the bottom */
+	}
 
-    /* Contact form styling */
-    .contact-page .contact-form {
-        width: 100%;
-        margin: 0 auto;
-        padding: 15px;
-        box-sizing: border-box;
-    }
+	.contact-page .content-container {
+		width: 100%;
+		max-width: 600px;
+		margin: 0 auto; /* Center the content container */
+		padding: 0; /* Remove any unnecessary padding */
+	}
 
-    /* Title and description of the contact page */
-    .contact-page h1, .contact-page p {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
+	.contact-page .contact-form {
+		width: 100%;
+		margin: 0 auto;
+		padding: 15px;
+		box-sizing: border-box;
+		margin-bottom: 0; /* Remove extra space at the bottom of the form */
+	}
+
+	.contact-page .footer {
+		margin-top: 0; /* Remove extra margin */
+		padding-top: 0; /* Remove padding from the top of the footer */
+		position: relative; /* Ensure footer follows the form closely */
+		width: 100%;
+		background-color: #fde6e0;
+	}
+
+	.contact-page .footer-icons {
+		margin: 0; /* Remove any extra margin */
+		padding: 0;
+		display: flex;
+		justify-content: flex-end; /* Keep footer icons on the right */
+		align-items: center; /* Vertically align icons */
+	}
+
+	.contact-page h1, .contact-page p {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10px; /* Reduce space between header and form */
+		padding: 0; /* Remove unnecessary padding */
+	}
+
+	/* Fix the overall page spacing to move everything up */
+	body, .contact-page {
+		padding-top: 0; /* Remove any top padding pushing content down */
+		margin-top: 0; /* Ensure no margin is pushing content down */
+	}
 
     /* Hide the quote on mobile */
     .quote {
@@ -859,6 +892,7 @@ img:last-child:nth-child(5) {
 	.footer {
 		position: absolute; /* Stay at the bottom of the page, not fixed */
 		bottom: 0px;
+		margin-top: 0; 
 		left: 0;
 		width: 100%;
 		background-color: #fde6e0;
@@ -874,6 +908,4 @@ img:last-child:nth-child(5) {
 		visibility: visible;
 		opacity: 1; /* Fade in footer when scrolled to the bottom */
 	}
-
-
 }
